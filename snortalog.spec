@@ -10,6 +10,7 @@ Source0:	http://jeremy.chartier.free.fr/snortalog/%{name}_v%{version}.tgz
 # Source0-md5:	7f11424d17bc144c8739d302805103ed
 Source1:	%{name}.cron
 URL:		http://jeremy.chartier.free.fr/snortalog/
+BuildRequires:	sed >= 4.0
 Requires:	snort
 Requires:	gd
 Requires:	perl-GD-TextUtil
