@@ -2,12 +2,12 @@
 Summary:	Snortalog is a Perl script that summarize snort logs
 Summary(pl):	Snortalog jest skryptem Perla podsumowuj±cym logi snorta
 Name:		snortalog
-Version:	2.3.0b
+Version:	2.3.0c
 Release:	1
 License:	GPL
 Group:		Networking
 Source0:	http://jeremy.chartier.free.fr/snortalog/%{name}_v%{version}.tgz
-# Source0-md5:	fb06e8471ded78d8a7b31cdabb8b2169
+# Source0-md5:	7f11424d17bc144c8739d302805103ed
 Source1:	%{name}.cron
 URL:		http://jeremy.chartier.free.fr/snortalog/
 Requires:	snort
@@ -29,7 +29,7 @@ przez sieæ. Dostarcza wiele sortuj±cych i filtruj±cych opcji w
 formacie ASCII i HTML.
 
 %prep
-%setup -q -c
+%setup -q -n %{name}_v2.3
 
 %build
 sed -i -e 's#"domains"#"%{_datadir}/%{name}/domains"#g' *.pl
