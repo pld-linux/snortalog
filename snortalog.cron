@@ -1,0 +1,10 @@
+#!/bin/sh
+#$log ist's a name of snort's log file for eg. alert, */* .
+log='*/*'
+path='/home/services/httpd/html/snort'
+wyr='\/home\/services\/httpd\/html\/snort\/'
+
+rm $path/*
+cat /var/log/snort/$log | /usr/bin/snortalog.pl -g gif -h $path/index.html
+cat $path/index.html |sed -e 's/$wyr//g' > $path/index.html
+chmod 644 $path/*
