@@ -1,0 +1,13 @@
+--- snortalog-1.9.0-rc2/snortalog.pl.fix	Thu Apr 10 16:45:08 2003
++++ snortalog-1.9.0-rc2/snortalog.pl	Thu Apr 10 16:46:43 2003
+@@ -8,8 +8,8 @@
+ use Getopt::Long;		# use Getopt for options
+ use Socket;                     # use socket for resolving domain name from IP
+ 
+-$domains_file = "domains";
+-$rules_file = "rules";
++$domains_file = "/usr/share/snortalog/domains";
++$rules_file = "/usr/share/snortalog/rules";
+ $addr_len = 15;
+ $nb_len = 6;
+ $port_len = 5;
