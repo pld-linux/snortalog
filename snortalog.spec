@@ -7,6 +7,7 @@ Version:	1.9.0
 Release:	%{_rc}.1
 License:	GPL
 Group:		Networking
+#Source0:	http://jeremy.chartier.free.fr/snortalog/snortalog_v1.9.0.tgz
 Source0:	%{name}-%{version}-%{_rc}.tar.gz
 Source1:	%{name}.cron
 Patch0:		%{name}-paths.patch
