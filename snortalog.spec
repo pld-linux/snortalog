@@ -11,7 +11,6 @@ Source0:	http://jeremy.chartier.free.fr/snortalog/%{name}_v%{version}.tgz
 Source1:	%{name}.cron
 Patch0:		%{name}-paths.patch
 URL:		http://jeremy.chartier.free.fr/snortalog/
-BuildRequires:	sed >= 4.0
 Requires:	snort
 Requires:	gd
 Requires:	perl-GD-TextUtil
