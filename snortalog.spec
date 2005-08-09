@@ -3,12 +3,13 @@ Summary:	Snortalog is a Perl script that summarize snort logs
 Summary(pl):	Snortalog jest skryptem Perla podsumowuj±cym logi snorta
 Name:		snortalog
 Version:	2.3.0c
-Release:	1
+Release:	2
 License:	GPL
 Group:		Networking
 Source0:	http://jeremy.chartier.free.fr/snortalog/%{name}_v%{version}.tgz
 # Source0-md5:	7f11424d17bc144c8739d302805103ed
 Source1:	%{name}.cron
+Patch0:		%{name}-paths.patch
 URL:		http://jeremy.chartier.free.fr/snortalog/
 BuildRequires:	sed >= 4.0
 Requires:	snort
@@ -17,6 +18,8 @@ Requires:	perl-GD-TextUtil
 Requires:	perl-GD-Graph
 Requires:	rpm-perlprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define	_noautoreq	'perl(modules.*)'
 
 %description
 Snortalog is a Perl script to summarise snort logs making it easier to
@@ -31,12 +34,7 @@ formacie ASCII i HTML.
 
 %prep
 %setup -q -n %{name}_v2.3
-
-%build
-sed -i -e 's#"domains"#"%{_datadir}/%{name}/domains"#g' *.pl
-sed -i -e 's#"rules"#"%{_datadir}/%{name}/rules"#g' *.pl
-sed -i -e 's#"hw"#"%{_datadir}/%{name}/hw"#g' *.pl
-sed -i -e 's#"lang"#"%{_datadir}/%{name}/lang"#g' *.pl
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -46,6 +44,7 @@ install -d $RPM_BUILD_ROOT%{_datadir}/%{name} \
 
 install snortalog.pl $RPM_BUILD_ROOT%{_bindir}
 install domains rules hw lang $RPM_BUILD_ROOT%{_datadir}/%{name}
+cp -r modules $RPM_BUILD_ROOT%{_datadir}/%{name}
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/cron.daily/%{name}
 
 %clean
