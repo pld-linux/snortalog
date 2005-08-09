@@ -4,7 +4,7 @@ Summary(pl):	Snortalog jest skryptem Perla podsumowuj±cym logi snorta
 Name:		snortalog
 Version:	2.3.0c
 Release:	2
-License:	GPL
+License:	GPL v2+
 Group:		Networking
 Source0:	http://jeremy.chartier.free.fr/snortalog/%{name}_v%{version}.tgz
 # Source0-md5:	7f11424d17bc144c8739d302805103ed
