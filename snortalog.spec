@@ -12,9 +12,9 @@ Source0:	http://jeremy.chartier.free.fr/snortalog/downloads/snortalog/%{name}_v%
 Source1:	%{name}.cron
 Patch0:		%{name}-paths.patch
 URL:		http://jeremy.chartier.free.fr/snortalog/
-Requires:	perl-GD-TextUtil
+BuildRequires:	rpm-perlprov
 Requires:	perl-GD-Graph
-Requires:	rpm-perlprov
+Requires:	perl-GD-TextUtil
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_noautoreq	'perl(modules.*)'
