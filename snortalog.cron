@@ -1,2 +1,4 @@
 #!/bin/sh
-cat /var/log/snort/* /var/log/snort/*/* 2>&1 | /usr/bin/snortalog.pl -report 
+if [ -d /var/log/snort ]; then
+	cat /var/log/snort/* /var/log/snort/*/* 2>&1 | /usr/bin/snortalog.pl -report 
+fi
