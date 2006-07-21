@@ -1,38 +1,27 @@
---- snortalog_v2.3/snortalog.pl.orig	2005-08-09 18:38:55.015782464 +0200
-+++ snortalog_v2.3/snortalog.pl	2005-08-09 18:40:51.690045280 +0200
-@@ -5,6 +5,7 @@
- # Revision: 2.3.0c
+--- snortalog/snortalog.pl.orig	2005-12-01 13:46:21.000000000 +0100
++++ snortalog/snortalog.pl	2006-07-21 08:48:11.084440000 +0200
+@@ -5,14 +5,15 @@
+ # Revision: 2.4.0
  # 
  
 +use lib '/usr/share/snortalog';
  #
- # Modules requirement
- # Detect specific logs - Comment unnecessary log detectection
-@@ -68,10 +69,10 @@
- #
  # Main variables
  #
--$domains_file = "domains"; $DOMAINS = 1;	# Path to find Domain file
--$rules_file = "rules"; $RULES = 1;		# Path to find Rules file
--$hw_file = "hw"; $HW = 1;			# Path to find Hardware file
--$lang_file = "lang"; $LANG = 1;			# Path to find Language file
-+$domains_file = "/usr/share/snortalog/domains"; $DOMAINS = 1;	# Path to find Domain file
-+$rules_file = "/usr/share/snortalog/rules"; $RULES = 1;		# Path to find Rules file
-+$hw_file = "/usr/share/snortalog/hw"; $HW = 1;			# Path to find Hardware file
-+$lang_file = "/usr/share/snortalog/lang"; $LANG = 1;			# Path to find Language file
- $html_directory = "/tmp/";			# Default output directorys (HTML output exclusively)
- $dbm_directory = "/tmp/";			# Default output directorys (HTML output exclusively)
- $tmpout_file = "/tmp/.snortalog.tmp";		# Default tempory file (GUI exclusively)
-@@ -3198,7 +3199,7 @@
- 		$scrolled_result->insert('end', "\n");
- 		$scrolled_status->insert('end', "OK\n");
- 	} else {	
--		section_header("$description\n", "rules");
-+		section_header("$description\n", "/usr/share/snortalog/rules");
- 		foreach $k (sort { $s21{$b} <=> $s21{$a} } keys %s21) {
- 			printf("  %5.2f  %-${nb_len}d  %-4d\n", $s21{$k}/$total*100,$s21{$k},$k) if ( $i < $n );
- 			++$i;
-@@ -4039,7 +4040,7 @@
+-$domains_file = "conf/domains"; $DOMAINS = 1;			# Path to find Domain file
+-$rules_file = "conf/rules"; $RULES = 1;				# Path to find Rules file
+-$hw_file = "conf/hw"; $HW = 1;					# Path to find Hardware file
+-$lang_file ="conf/lang"; $LANG = 1;				# Path to find Language file
+-$picts_dir ="picts"; $PICTS = 1;				# Path to find pictures HTML files 
++$domains_file = "/usr/share/snortalog/conf/domains"; $DOMAINS = 1;			# Path to find Domain file
++$rules_file = "/usr/share/snortalog/conf/rules"; $RULES = 1;				# Path to find Rules file
++$hw_file = "/usr/share/snortalog/conf/hw"; $HW = 1;					# Path to find Hardware file
++$lang_file ="/usr/share/snortalog/conf/lang"; $LANG = 1;				# Path to find Language file
++$picts_dir ="/usr/share/snortalog/picts"; $PICTS = 1;				# Path to find pictures HTML files 
+ #$html_directory = "/tmp/";					# Default output directorys (HTML output exclusively)
+ $dbm_directory = "/tmp/";					# Default output directorys (HTML output exclusively)
+ $tmpout_file = "/tmp/.snortalog.tmp";				# Default tempory file (GUI exclusively)
+@@ -1877,7 +1878,7 @@
  	print( '=' x $linelength, "\n");
  	print(" " x 4, "### ". $n ." of ". keys(%s14) ." ###\n");
  	print("    %    No      Actions\n");
