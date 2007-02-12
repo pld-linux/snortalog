@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Snortalog - a Perl script that summarize snort and other IDS and firewall logs
-Summary(pl):	Snortalog - skrypt Perla podsumowuj±cy logi snorta i innych IDS-ów oraz firewalli
+Summary(pl.UTF-8):   Snortalog - skrypt Perla podsumowujÄ…cy logi snorta i innych IDS-Ã³w oraz firewalli
 Name:		snortalog
 Version:	2.4.0
 Release:	1
@@ -25,11 +25,11 @@ firewall logs making it easier to see what attack are being seen
 through your network. It provides many sorting and filtering options
 in ASCII and HTML format.
 
-%description -l pl
-Snortalog jest skryptem Perla, który podsumowuje logi snorta i innych
-IDS-ów oraz firewalli sprawiaj±c, ¿e mo¿na ³atwo sprawdziæ przez kogo
-jeste¶my atakowani przez sieæ. Dostarcza wiele sortuj±cych i
-filtruj±cych opcji w formacie ASCII i HTML.
+%description -l pl.UTF-8
+Snortalog jest skryptem Perla, ktÃ³ry podsumowuje logi snorta i innych
+IDS-Ã³w oraz firewalli sprawiajÄ…c, Å¼e moÅ¼na Å‚atwo sprawdziÄ‡ przez kogo
+jesteÅ›my atakowani przez sieÄ‡. Dostarcza wiele sortujÄ…cych i
+filtrujÄ…cych opcji w formacie ASCII i HTML.
 
 %prep
 %setup -q -n %{name}
