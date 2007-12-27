@@ -2,13 +2,13 @@
 Summary:	Snortalog - a Perl script that summarize snort and other IDS and firewall logs
 Summary(pl.UTF-8):	Snortalog - skrypt Perla podsumowujący logi snorta i innych IDS-ów oraz firewalli
 Name:		snortalog
-Version:	2.4.0
+Version:	2.4.2
 Release:	1
 License:	GPL v2+
 Group:		Networking
 #Source0Download: http://jeremy.chartier.free.fr/snortalog/download.html
 Source0:	http://jeremy.chartier.free.fr/snortalog/downloads/snortalog/%{name}_v%{version}.tgz
-# Source0-md5:	f35df4375525c633b085fe5ee88aee46
+# Source0-md5:	6a86b24b7c9027e17ac0eb46d544a6e5
 Source1:	%{name}.cron
 Patch0:		%{name}-paths.patch
 URL:		http://jeremy.chartier.free.fr/snortalog/
